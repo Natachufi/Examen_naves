@@ -43,6 +43,7 @@ public class Movimiento_nave : MonoBehaviour {
 
 	void disparo(){
 		GameObject nuevo_laser = (GameObject) Instantiate(laser, transform.position, transform.rotation); //al darle al espacio se instancia el laser con X fuerza
+		Audio.Play ();
 		//fuerza_laser.y= new Vector2(0,200);
 		nuevo_laser.GetComponent<Rigidbody2D>().AddForce(fuerza_laser);
 		//AudioSource(Jump);
