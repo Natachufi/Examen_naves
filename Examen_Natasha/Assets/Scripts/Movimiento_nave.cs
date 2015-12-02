@@ -17,16 +17,14 @@ public class Movimiento_nave : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetKey (KeyCode.A)) {
-			mueve_izq();
+			mueve_izq ();
 		}
 		if (Input.GetKey (KeyCode.D)) {
-			mueve_dch();
+			mueve_dch ();
 		}
 		if (Input.GetKey (KeyCode.Space)) {
-			disparo();
+			disparo ();
 		}
-
-	Vector2 velocidad = GetComponent <Rigidbody2D> ().velocity;
 	}
 
 
@@ -46,6 +44,13 @@ public class Movimiento_nave : MonoBehaviour {
 		GameObject nuevo_laser = (GameObject) Instantiate(laser, transform.position, transform.rotation);
 		//fuerza_laser.y= new Vector2(0,200);
 		nuevo_laser.GetComponent<Rigidbody2D>().AddForce(fuerza_laser);
+	}
+
+	void OnCollisionEnter2D (Collision2D objeto){
+		//Debug.Log (objeto.transform.name);
+		if (objeto.transform.tag == "enemigo") {
+			Destroy (gameObject);
+		}
 	}
 	
 }
