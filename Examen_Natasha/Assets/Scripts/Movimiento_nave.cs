@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Movimiento_nave : MonoBehaviour {
+	public AudioSource audioSource;
 
 	Rigidbody2D rg;
 	public GameObject laser;
@@ -44,7 +45,9 @@ public class Movimiento_nave : MonoBehaviour {
 		GameObject nuevo_laser = (GameObject) Instantiate(laser, transform.position, transform.rotation);
 		//fuerza_laser.y= new Vector2(0,200);
 		nuevo_laser.GetComponent<Rigidbody2D>().AddForce(fuerza_laser);
-	}
+		//AudioSource(Jump);
+		}
+
 
 	void OnTriggerEnter2D (Collider2D objeto){
 		//Debug.Log (objeto.transform.name);
