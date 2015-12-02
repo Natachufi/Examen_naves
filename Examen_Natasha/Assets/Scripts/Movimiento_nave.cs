@@ -32,8 +32,8 @@ public class Movimiento_nave : MonoBehaviour {
 
 	void mueve_izq(){
 	
-		transform.localScale = (new Vector3(-1,1,1)); 
-		rg.velocity = (new Vector2 (-(velocidad_nave), rg.velocity.y));
+		transform.localScale = (new Vector3(-1,1,1));  //para que no cambie de pocicion ni su escala
+		rg.velocity = (new Vector2 (-(velocidad_nave), rg.velocity.y)); //aqui se le da la velocidad para que se mueva hacia la izquierda
 	}
 
 	void mueve_dch(){
@@ -42,7 +42,7 @@ public class Movimiento_nave : MonoBehaviour {
 	}
 
 	void disparo(){
-		GameObject nuevo_laser = (GameObject) Instantiate(laser, transform.position, transform.rotation);
+		GameObject nuevo_laser = (GameObject) Instantiate(laser, transform.position, transform.rotation); //al darle al espacio se instancia el laser con X fuerza
 		//fuerza_laser.y= new Vector2(0,200);
 		nuevo_laser.GetComponent<Rigidbody2D>().AddForce(fuerza_laser);
 		//AudioSource(Jump);
@@ -51,9 +51,9 @@ public class Movimiento_nave : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D objeto){
 		//Debug.Log (objeto.transform.name);
-		if (objeto.transform.tag == "enemigo") {
+		if (objeto.transform.tag == "enemigo") {   //si la nave colisiona con el laser muere
 			Destroy (gameObject);
-			Application.LoadLevel("menu_principal");
+			Application.LoadLevel("menu_principal"); //y se reinicia el menu principal
 		}
 	}
 	

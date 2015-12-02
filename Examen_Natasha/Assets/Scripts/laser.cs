@@ -14,7 +14,7 @@ public class laser : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D objeto){
 		//Debug.Log (objeto.transform.name);
-		if (objeto.transform.tag == "enemigo") {
+		if (objeto.transform.tag == "enemigo") {  //si el laser colisiona con el destructor se destruye
 			Destroy (gameObject);
 		}
 	}

@@ -15,6 +15,6 @@ public class menu_controller : MonoBehaviour {
 	public void Jugar()
 	{
 		
-		Application.LoadLevel("level1");
+		Application.LoadLevel("level1"); //esto sirve para que al darle al boton te vayas a la escena del primer nivel
 	}
 }
