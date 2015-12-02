@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Enemigo : MonoBehaviour {
 	Rigidbody2D rg; 
+	public AudioSource jump;
 	public float fuerza_enemigo=1f; //es
 	public GameObject efecto;
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class Enemigo : MonoBehaviour {
 		if (objeto.transform.tag == "laser") {
 			GameObject e =(GameObject)Instantiate(efecto,transform.position, transform.rotation); //coges su gameobjet y en el instancias el efecto de la explosion al colisionar con el laser
 			Destroy (e,0.9f); //se destruira en 9 segundos
+			AudioSource.PlayClipAtPoint(AudioClip jump);
 			Destroy (gameObject); //y despues se destruira
 		}
 		if (objeto.transform.tag == "destructor") {
