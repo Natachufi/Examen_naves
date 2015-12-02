@@ -46,10 +46,11 @@ public class Movimiento_nave : MonoBehaviour {
 		nuevo_laser.GetComponent<Rigidbody2D>().AddForce(fuerza_laser);
 	}
 
-	void OnCollisionEnter2D (Collision2D objeto){
+	void OnTriggerEnter2D (Collider2D objeto){
 		//Debug.Log (objeto.transform.name);
 		if (objeto.transform.tag == "enemigo") {
 			Destroy (gameObject);
+			Application.LoadLevel("menu_principal");
 		}
 	}
 	

@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Enemigo : MonoBehaviour {
-	Rigidbody2D rg;
-	public float fuerza_enemigo=1f;
+	Rigidbody2D rg; 
+	public float fuerza_enemigo=1f; //es
 	public GameObject efecto;
 	// Use this for initialization
 	void Start () {
